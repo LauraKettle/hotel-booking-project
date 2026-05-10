@@ -1,0 +1,34 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Rooms from "./pages/Rooms";
+import RoomDetails from "./pages/RoomDetails";
+import Search from "./pages/Search";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Booking from "./pages/Booking";
+
+function App(){
+  return (
+    <BrowserRouter>
+    <Navbar />
+
+    <Routes>
+      <Route path="/" element ={<Home />} />
+      <Route path="/rooms" element ={<Rooms />} />
+      <Route path="/rooms/:id" element ={<RoomDetails />} />
+      <Route path="/search" element ={<Search />} />
+      <Route path="/register" element ={<Register />} />
+      <Route path="/login" element ={<Login/>} />
+      <Route path="/dashboard" element ={<Dashboard />} />
+      <Route path="/booking" element ={<Booking />} />
+    </Routes>
+      
+      </BrowserRouter>
+  );
+}
+
+export default App;
