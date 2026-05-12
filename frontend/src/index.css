@@ -112,6 +112,30 @@ body {
   filter: brightness(0);
 }
 
+.navbar.other-page {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.other-page .nav-links a{
+  color: #1f2937;
+}
+
+.navbar.other-page .nav-links a::after {
+  background-color: #1f2937;
+}
+
+.navbar.other-page .search-icon {
+  filter: brightness(0);
+}
+
+.navbar.other-page .login-button{
+  background-color: #1f2937;
+  color: white;
+}
+
 /* Hero */
 .hero-section {
   width: 100%;
@@ -155,6 +179,8 @@ body {
 .room-card{
   width: 305px;
   background-color: white;
+  border-radius: 18px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease;
 
@@ -185,6 +211,7 @@ body {
   border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
+  border-radius: 30px;
 }
 
 .room-card-body{
@@ -229,10 +256,17 @@ body {
 .book-button{
   text-decoration: none;
   border: 1px solid #cbd5e1;
+  border-radius: 10px;
   padding: 10px 18px;
   border-radius: 4px;
   color: #6b7280;
   font-weight: bold;
+
+}
+
+.book-button:hover{
+  background-color: #6b7280;
+  color: white;
 }
 
 form {
@@ -248,4 +282,28 @@ input {
 
 button{
   padding: 8px;
+}
+
+/* Rooms page */
+
+.rooms-page{
+  padding-top: 140px;
+  padding-left: 40px;
+  padding-right: 40px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.rooms-title{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 42px;
+  padding-bottom: 30px;
+}
+
+.rooms-container{
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }

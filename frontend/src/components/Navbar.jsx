@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react"; 
 import searchIcon from "../assets/searchIcon.svg";
 
@@ -6,6 +6,8 @@ import searchIcon from "../assets/searchIcon.svg";
 function Navbar() {
 
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();  
+    const isHomePage = location.pathname === "/";
     
     useEffect(() => {
         function handleScroll(){
@@ -20,7 +22,7 @@ function Navbar() {
     }, []);
 
     return(
-        <nav className={scrolled ? "navbar scrolled" : "navbar"}>
+        <nav className={`navbar ${scrolled ? "scrolled" : ""} ${!isHomePage ? "other-page" : ""}`}>
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/rooms">Rooms</Link>
