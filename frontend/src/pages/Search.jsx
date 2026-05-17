@@ -1,28 +1,50 @@
 import { useState } from "react";
-import rooms from "../data/rooms";
-import RoomCard from "../components/RoomCard";
+import Navbar from "../components/Navbar";
+
+
 
 function Search() {
     const [searchText, setSearchText] = useState("");
+    
+    function handleSearch(e){
+        e.preventDefault();
 
-    const filteredRooms = rooms.filter((room) => 
-    room.name.toLowerCase().includes(searchText.toLowerCase())
-);
+        if (searchText === ""){
+            alert("Please enter a hotel or destination");
+            return;
+        }
+
+        alert(`Searching for: ${searchText}`);
+    }
 
 return(
-    <div>
-        <h1>Search Rooms</h1>
+   <>
+   <Navbar />
 
-        <input 
-            type="text"
-            placeholder="Search by room name"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-             />
-        {filteredRooms.map((room) => (
-            <RoomCard key={room.id} room={room} />
-        ))}
+   <div className="search-page">
+    <div className="search-card">
+        <h1>Find your stay</h1>
+
+        <p className="search-intro">
+            Search by hotel name or destination
+        </p>
+
+        <form onSubmit={handleSearch}>
+            <div className="search-field">
+                <label>Hotel or Destination</label>
+
+                <input 
+                    type="text"
+                    placeholder="Example: Rome, Paris, Standard Room"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                 />
+            </div>
+            <button type="submit" className="search-page-button">Search</button>
+        </form>
     </div>
+   </div>
+   </>
 );
 }
 

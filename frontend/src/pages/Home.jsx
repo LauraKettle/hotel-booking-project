@@ -3,6 +3,7 @@ import heroImage from "../assets/heroBackground.png";
 import Navbar from '../components/Navbar';
 import RoomCard from "../components/RoomCard";
 import rooms from '../data/rooms';
+import Footer from '../components/footer';
 
 function Home(){
   return (
@@ -27,6 +28,8 @@ function Home(){
         ))}
 
       </section>
+
+      <Footer />
     </>
   );
 }
