@@ -22,7 +22,7 @@ function RoomCard({room}) {
 
                 <p className="location">
                     <img src={locationIcon} alt="Location" className="card-icon" />
-                    Rome, Italy
+                    <span>{room.location}</span>
                 </p>
 
                 <div className="card-bottom">

@@ -54,7 +54,7 @@ function RoomDetails() {
             ))}
           </ul>
 
-          <Link to={`/rooms/${room.id}/book`}>
+          <Link to={`/rooms/${room.id}/book`}> {/* Should this be <Link to="/booking" */}
             <button className="booking-primary-btn">
               Book This Room
             </button>

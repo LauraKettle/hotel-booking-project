@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 function Rooms(){
     return(
         <>
-        <Navbar />
+        
 
         <div className="rooms-page">
             <h1 className="rooms-title">Available Rooms</h1>

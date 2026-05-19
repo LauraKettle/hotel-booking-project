@@ -22,7 +22,7 @@ function Footer() {
 
             </div>
 
-            <div footer-section>
+            <div className="footer-section">
                 <h3>Contact</h3>
                 <p>Email: info@hotelbooking.com</p>
                 <p>Phone: +353 123 4567</p>

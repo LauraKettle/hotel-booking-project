@@ -10,9 +10,11 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Booking from "./pages/Booking";
+import Footer from "./components/Footer";
 
 function App(){
   return (
+    <>
     <BrowserRouter>
     <Navbar />
 
@@ -26,8 +28,11 @@ function App(){
       <Route path="/dashboard" element ={<Dashboard />} />
       <Route path="/booking" element ={<Booking />} />
     </Routes>
+
+    <Footer />
       
       </BrowserRouter>
+      </>
   );
 }
 
