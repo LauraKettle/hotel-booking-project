@@ -88,7 +88,29 @@ app.post('/api/register', async (req, res) => {
   const hash_password = await bcrypt.hash(password, 10);
   await pool.query('INSERT INTO users (firstname, surname, email, user_password, newsletter) VALUES (?, ?, ?, ?, ?)', [first_name, surname, email, hash_password, signup]);
   res.sendStatus(201);
-});   
+});
+//login
+app.post('/api/login', async (req, res) => {
+    const { email, password } = req.body;
+    const [users] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+    if (users.length === 0) {
+        return res.status(401).send("Username not found. Please register with us before attempting login!");
+    }
+    user = users[0];
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+        return res.status(401).send("Password is incorrect");
+    }
+    return res.status(200).json({
+        message: "Login successful",
+        user: {
+            id: user.id,
+            email: user.email,
+            firstname: user.firstname,
+            surname: user.surname
+        }
+    })
+})   
 //start server
 
 app.listen(PORT, () => {
